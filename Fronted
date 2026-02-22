@@ -1,0 +1,38 @@
+const express = require("express");
+const app = express();
+const PORT = 3000;
+
+// Home Page
+app.get("/", (req, res) => {
+    res.send(`
+        <html>
+            <head>
+                <title>AI Literacy Project</title>
+                <style>
+                    body { font-family: Arial; text-align: center; background-color: #f2f2f2; }
+                    h1 { color: darkblue; }
+                    ul { list-style-type: none; }
+                </style>
+            </head>
+            <body>
+                <h1>AI Literacy Project</h1>
+                <p>AI Literacy means understanding Artificial Intelligence basics and responsible usage.</p>
+
+                <h2>Applications of AI</h2>
+                <ul>
+                    <li>Chatbots</li>
+                    <li>Healthcare AI</li>
+                    <li>Self-driving Cars</li>
+                    <li>Recommendation Systems</li>
+                    <li>Generative AI</li>
+                </ul>
+
+                <p><b>AI should be used ethically and responsibly.</b></p>
+            </body>
+        </html>
+    `);
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
